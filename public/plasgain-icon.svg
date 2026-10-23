@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0F172A"/>
+  <path d="M14 14H26C31.5228 14 36 18.4772 36 24C36 29.5228 31.5228 34 26 34H14V14Z" fill="url(#plasgain_gradient)"/>
+  <circle cx="24" cy="24" r="5" fill="#0F172A"/>
+  <defs>
+    <linearGradient id="plasgain_gradient" x1="14" y1="14" x2="36" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+</svg>
