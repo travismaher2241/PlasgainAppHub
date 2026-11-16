@@ -66,4 +66,24 @@ export const PLASGAIN_APPS: AppLauncherItem[] = [
       cardBorderHover: 'hover:border-emerald-400 hover:shadow-emerald-500/10',
     },
   },
+  {
+    id: 'plasgain-crm',
+    name: 'Plasgain CRM',
+    category: 'Customer Relationship Management',
+    description:
+      'Manage customers, accounts, and deals in one place to keep every Plasgain relationship moving forward.',
+    url: 'https://plasgain-crm.vercel.app/',
+    icon: 'Briefcase',
+    status: 'active',
+    theme: {
+      accent: 'violet',
+      gradient: 'from-violet-500/10 via-purple-500/5 to-transparent',
+      badgeColor: 'bg-violet-50 text-violet-700 border-violet-200',
+      iconBg: 'bg-violet-50 text-violet-600 ring-1 ring-violet-500/20',
+      iconColor: 'text-violet-600',
+      buttonBg: 'bg-violet-600 hover:bg-violet-700 text-white shadow-violet-600/20',
+      buttonHover: 'hover:bg-violet-700',
+      cardBorderHover: 'hover:border-violet-400 hover:shadow-violet-500/10',
+    },
+  },
 ];
