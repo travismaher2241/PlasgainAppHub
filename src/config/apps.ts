@@ -106,4 +106,24 @@ export const PLASGAIN_APPS: AppLauncherItem[] = [
       cardBorderHover: 'hover:border-orange-400 hover:shadow-orange-500/10',
     },
   },
+  {
+    id: 'weekly-follow-up',
+    name: 'Weekly Follow-Up',
+    category: 'Planning & Accountability',
+    description:
+      'Keep track of weekly follow-ups and action items so nothing slips through the cracks.',
+    url: 'https://weekly-follow-up.vercel.app/',
+    icon: 'BarChart3',
+    status: 'active',
+    theme: {
+      accent: 'rose',
+      gradient: 'from-rose-500/10 via-pink-500/5 to-transparent',
+      badgeColor: 'bg-rose-50 text-rose-700 border-rose-200',
+      iconBg: 'bg-rose-50 text-rose-600 ring-1 ring-rose-500/20',
+      iconColor: 'text-rose-600',
+      buttonBg: 'bg-rose-600 hover:bg-rose-700 text-white shadow-rose-600/20',
+      buttonHover: 'hover:bg-rose-700',
+      cardBorderHover: 'hover:border-rose-400 hover:shadow-rose-500/10',
+    },
+  },
 ];
