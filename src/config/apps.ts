@@ -86,4 +86,24 @@ export const PLASGAIN_APPS: AppLauncherItem[] = [
       cardBorderHover: 'hover:border-violet-400 hover:shadow-violet-500/10',
     },
   },
+  {
+    id: 'coworker',
+    name: 'Coworker',
+    category: 'Team & Productivity',
+    description:
+      'A shared workspace that helps the Plasgain team stay organised and get everyday work done together.',
+    url: 'https://coworker-tau.vercel.app/',
+    icon: 'Layers',
+    status: 'active',
+    theme: {
+      accent: 'orange',
+      gradient: 'from-orange-500/10 via-amber-500/5 to-transparent',
+      badgeColor: 'bg-orange-50 text-orange-700 border-orange-200',
+      iconBg: 'bg-orange-50 text-orange-600 ring-1 ring-orange-500/20',
+      iconColor: 'text-orange-600',
+      buttonBg: 'bg-orange-600 hover:bg-orange-700 text-white shadow-orange-600/20',
+      buttonHover: 'hover:bg-orange-700',
+      cardBorderHover: 'hover:border-orange-400 hover:shadow-orange-500/10',
+    },
+  },
 ];
