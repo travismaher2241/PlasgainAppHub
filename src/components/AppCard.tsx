@@ -7,7 +7,6 @@ import {
   Database,
   Layers,
   ExternalLink,
-  CheckCircle2,
 } from 'lucide-react';
 import type { AppLauncherItem } from '../config/apps';
 
@@ -65,61 +64,33 @@ export const AppCard: React.FC<AppCardProps> = ({ app }) => {
       aria-label={`Open ${app.name}`}
       onClick={handleCardClick}
       onKeyDown={handleKeyDown}
-      className={`group relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 cursor-pointer ${app.theme.cardBorderHover}`}
+      className="app-card"
     >
-      {/* Subtle top corner gradient highlight */}
-      <div
-        className={`pointer-events-none absolute inset-0 rounded-2xl bg-gradient-to-br ${app.theme.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
-      />
-
-      <div className="relative z-10 flex flex-col">
-        {/* Header row: Icon & Status */}
-        <div className="flex items-center justify-between gap-4 mb-5">
-          <div
-            className={`flex h-14 w-14 items-center justify-center rounded-xl p-3 shadow-inner transition-transform duration-300 group-hover:scale-105 ${app.theme.iconBg}`}
-          >
-            <IconComponent className="h-7 w-7" />
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span
-              className={`inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold border ${app.theme.badgeColor}`}
-            >
-              <CheckCircle2 className="h-3 w-3" />
-              Active
-            </span>
-          </div>
-        </div>
-
-        {/* Category & Title */}
-        <span className="text-xs font-semibold uppercase tracking-wider text-slate-500 mb-1">
-          {app.category}
+      <div className="card-heading">
+        <span className="card-icon" aria-hidden="true">
+          <IconComponent className="h-5 w-5" />
         </span>
-        <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors">
-          {app.name}
-        </h2>
-
-        {/* Description */}
-        <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
-          {app.description}
-        </p>
+        <div className="card-labels">
+          <h2>{app.name}</h2>
+          <p>{app.category}</p>
+        </div>
+        <span className="card-status">Active</span>
       </div>
 
-      {/* Action footer */}
-      <div className="relative z-10 mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        {/* Prominent Launch Button */}
+      <p className="card-description">{app.description}</p>
+
+      <div className="card-actions">
         <a
           href={app.url}
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className={`inline-flex items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 ${app.theme.buttonBg}`}
+          className="launch-link"
         >
           <span>Open Application</span>
-          <ExternalLink className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          <ExternalLink className="h-4 w-4" aria-hidden="true" />
         </a>
 
-        {/* Secondary repository info link */}
         {app.githubUrl && (
           <a
             href={app.githubUrl}
@@ -127,7 +98,7 @@ export const AppCard: React.FC<AppCardProps> = ({ app }) => {
             rel="noopener noreferrer"
             title={`View ${app.name} GitHub Repository`}
             onClick={(e) => e.stopPropagation()}
-            className="inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs font-medium text-slate-500 hover:text-slate-800 transition-colors py-1.5 px-2.5 rounded-lg hover:bg-slate-100"
+            className="repository-link"
           >
             <GitHubIcon className="h-3.5 w-3.5" />
             <span>Repository</span>

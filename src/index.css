@@ -1,9 +1,251 @@
 @import "tailwindcss";
 
-@layer base {
-  body {
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    color: #1e293b;
-    background-color: #f8fafc;
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #f6f8fa;
+  --green: #00a651;
+  --green-hover: #008a44;
+  --green-soft: #e6f6ed;
+  --slate: #667085;
+  --border: #d9e1e7;
+  --charcoal: #172b34;
+}
+
+::selection {
+  background: var(--green-soft);
+  color: var(--charcoal);
+}
+
+:where(.app-card, .card-actions a):focus-visible {
+  outline: 2px solid var(--green-hover);
+  outline-offset: 3px;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page-width {
+  width: min(calc(100% - 64px), 1200px);
+  margin-inline: auto;
+}
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+}
+
+.brand-logo {
+  width: 132px;
+  height: auto;
+  padding: 8px 10px;
+  background: var(--charcoal);
+  border-radius: 5px;
+}
+
+.header-title {
+  border-left: 1px solid var(--border);
+  padding-left: 16px;
+  color: var(--charcoal);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.app-main {
+  flex: 1;
+  padding-block: 36px 40px;
+}
+
+.page-intro {
+  margin-bottom: 24px;
+}
+
+.page-intro h1 {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.page-intro p {
+  margin-top: 7px;
+  font-size: 15px;
+  color: var(--slate);
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.app-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 25px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(23 43 52 / 4%);
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.app-card:hover {
+  border-color: #9ccfb1;
+  box-shadow: 0 3px 10px rgb(23 43 52 / 7%);
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--green-soft);
+  color: #00763a;
+}
+
+.card-labels {
+  flex: 1;
+}
+
+.card-labels h2 {
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+.card-labels p,
+.card-status {
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.card-labels p {
+  margin-top: 3px;
+  color: var(--slate);
+}
+
+.card-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-top: 4px;
+  color: #37604a;
+}
+
+.card-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.card-description {
+  margin-block: 16px 20px;
+  color: var(--slate);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid #e9eef2;
+}
+
+.card-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  border-radius: 7px;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.launch-link {
+  padding-inline: 14px;
+  background: var(--green);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 50%);
+}
+
+.launch-link:hover {
+  background: var(--green-hover);
+}
+
+.repository-link {
+  padding-inline: 8px;
+  color: var(--slate);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.repository-link:hover {
+  background: var(--green-soft);
+  color: var(--charcoal);
+}
+
+.site-footer {
+  padding-block: 17px;
+  border-top: 1px solid var(--border);
+  color: var(--slate);
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .page-width {
+    width: calc(100% - 36px);
+  }
+
+  .app-main {
+    padding-top: 27px;
+  }
+
+  .page-intro h1 {
+    font-size: 28px;
+  }
+
+  .app-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .app-card {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-card,
+  .card-actions a {
+    transition: none;
   }
 }
