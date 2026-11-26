@@ -126,4 +126,24 @@ export const PLASGAIN_APPS: AppLauncherItem[] = [
       cardBorderHover: 'hover:border-rose-400 hover:shadow-rose-500/10',
     },
   },
+  {
+    id: 'plasgain-drawing-reader',
+    name: 'Drawing Reader',
+    category: 'Engineering & Technical Drawings',
+    description:
+      'Upload and read technical drawings to quickly pull out the key details, dimensions, and specifications.',
+    url: 'https://plasgain-drawing-reader.vercel.app/',
+    icon: 'Database',
+    status: 'active',
+    theme: {
+      accent: 'cyan',
+      gradient: 'from-cyan-500/10 via-sky-500/5 to-transparent',
+      badgeColor: 'bg-cyan-50 text-cyan-700 border-cyan-200',
+      iconBg: 'bg-cyan-50 text-cyan-600 ring-1 ring-cyan-500/20',
+      iconColor: 'text-cyan-600',
+      buttonBg: 'bg-cyan-600 hover:bg-cyan-700 text-white shadow-cyan-600/20',
+      buttonHover: 'hover:bg-cyan-700',
+      cardBorderHover: 'hover:border-cyan-400 hover:shadow-cyan-500/10',
+    },
+  },
 ];
